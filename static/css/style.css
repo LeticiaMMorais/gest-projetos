@@ -1,0 +1,203 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background: #f1f4f7;
+    color: #26364a;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.main-content {
+    flex: 1;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.main-footer {
+    background: #102f52;
+
+    color: white;
+
+    margin-top: 60px;
+}
+
+.footer-container {
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    padding: 38px 0 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr;
+
+    gap: 40px;
+}
+
+.footer-brand {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-start;
+}
+
+.footer-logo {
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(255,255,255,.3);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.footer-brand strong {
+    font-size: 15px;
+}
+
+.footer-brand p {
+    margin-top: 8px;
+
+    max-width: 320px;
+
+    color: #b9c9da;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 70px;
+}
+
+.footer-links div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.footer-links h4 {
+    font-size: 13px;
+
+    margin-bottom: 6px;
+}
+
+.footer-links a {
+    color: #b9c9da;
+
+    font-size: 12px;
+
+    transition: color .2s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    padding-top: 18px;
+    margin-top: 5px;
+    border-top:
+        1px solid rgba(255,255,255,.15);
+    display: flex;
+    justify-content: space-between;
+    color: #aebfd1;
+    font-size: 11px;
+}
+
+.button-8 {
+    width: fit-content;
+    background-color: #e1ecf4;
+    border-radius: 3px;
+    border: 1px solid #7aa7c7;
+    box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #39739d;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 8px .8em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.button-8:hover,
+.button-8:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+.button-8:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-8:active {
+  background-color: #a0c7e4;
+  box-shadow: none;
+  color: #2c5777;
+}

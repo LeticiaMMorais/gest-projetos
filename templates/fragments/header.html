@@ -1,0 +1,45 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+
+<header class="main-header">
+    <div class="header-container">
+        <a href="{% url 'home' %}" class="brand">
+            <div class="brand-icon">
+                GP
+            </div>
+            <div class="brand-text">
+                <strong>Gestão de Projetos</strong>
+                <span>Portal de Gestão</span>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+            <a href="{% url 'home' %}" class="nav-link">
+                Início
+            </a>
+            <a href="{% url 'list-projects' %}" class="nav-link">
+                Projetos
+            </a>
+            <a href="#" class="nav-link">
+                Tarefas
+            </a>
+        </nav>
+
+        <div class="header-user">
+            <div class="user-avatar">
+                U
+            </div>
+
+            <div class="user-info">
+                <span class="user-name">
+                    Usuário
+                </span>
+
+                <span class="user-role">
+                    user
+                </span>
+            </div>
+        </div>
+    </div>
+</header>

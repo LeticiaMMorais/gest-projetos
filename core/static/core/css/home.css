@@ -1,0 +1,737 @@
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.home-container {
+    width: min(1200px, 92%);
+
+    margin: 0 auto;
+
+    padding: 35px 0 20px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 330px;
+
+    background:
+        linear-gradient(
+            105deg,
+            #ffffff 0%,
+            #f8fafc 55%,
+            #e8eef4 100%
+        );
+
+    border-radius: 4px;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns:
+        1.15fr
+        .85fr;
+
+    border:
+        1px solid #e1e7ed;
+
+    box-shadow:
+        0 4px 18px rgba(30, 55, 80, .06);
+}
+
+
+.hero-content {
+    padding: 45px 45px 40px;
+}
+
+.hero-label,
+.section-label {
+    font-size: 10px;
+
+    letter-spacing: 1.2px;
+
+    font-weight: 700;
+
+    color: #60758b;
+}
+
+
+.hero h1 {
+    max-width: 570px;
+
+    margin-top: 10px;
+
+    font-size: clamp(28px, 3vw, 40px);
+
+    line-height: 1.12;
+
+    color: #1c3149;
+}
+
+
+.hero p {
+    max-width: 520px;
+
+    margin-top: 15px;
+
+    color: #66788b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    border-radius: 3px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 14px rgba(20, 45, 70, .12);
+}
+
+.btn-primary {
+    background: #153b63;
+
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0f3155;
+}
+
+.btn-secondary {
+    background: white;
+
+    color: #244765;
+
+    border:
+        1px solid #d4dde6;
+}
+
+.btn-secondary:hover {
+    background: #f5f8fa;
+}
+
+
+/* =========================================================
+   VISUAL DO HERO
+========================================================= */
+
+.hero-visual {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8eef4,
+            #d6e1eb
+        );
+}
+
+.hero-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.45);
+
+    right: -100px;
+    top: -100px;
+}
+
+
+/* Falsa tela de dashboard */
+
+.dashboard-preview {
+    position: relative;
+
+    width: 75%;
+
+    background: white;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 15px 35px rgba(25, 52, 78, .15);
+
+    transform: perspective(900px)
+               rotateY(-8deg)
+               rotateX(3deg);
+}
+
+.preview-header {
+    height: 30px;
+
+    background: #153b63;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding-left: 12px;
+}
+
+.preview-header span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #d9e4ee;
+}
+
+.preview-content {
+    padding: 20px;
+}
+
+.preview-line {
+    width: 45%;
+    height: 7px;
+
+    background: #dce5ed;
+
+    border-radius: 5px;
+
+    margin-bottom: 8px;
+}
+
+.preview-line.large {
+    width: 65%;
+
+    height: 11px;
+
+    background: #274b6d;
+}
+
+.preview-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 7px;
+
+    margin-top: 18px;
+}
+
+.preview-cards div {
+    height: 45px;
+
+    border-radius: 3px;
+
+    background: #eef2f5;
+}
+
+.preview-chart {
+    height: 80px;
+
+    margin-top: 12px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 7px;
+
+    padding: 10px;
+
+    background: #f4f7f9;
+}
+
+.preview-chart span {
+    flex: 1;
+
+    background: #547694;
+
+    opacity: .65;
+
+    border-radius: 2px 2px 0 0;
+}
+
+.preview-chart span:nth-child(1) {
+    height: 30%;
+}
+
+.preview-chart span:nth-child(2) {
+    height: 55%;
+}
+
+.preview-chart span:nth-child(3) {
+    height: 42%;
+}
+
+.preview-chart span:nth-child(4) {
+    height: 75%;
+}
+
+.preview-chart span:nth-child(5) {
+    height: 65%;
+}
+
+
+/* =========================================================
+   ESTATÍSTICAS
+========================================================= */
+
+.statistics {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+.stat-card {
+    background: white;
+
+    border:
+        1px solid #e2e8ed;
+
+    min-height: 110px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    box-shadow:
+        0 2px 8px rgba(30, 50, 70, .035);
+}
+
+.stat-icon {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 4px;
+
+    background: #edf3f7;
+
+    color: #244b6d;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.stat-card > div:last-child {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.stat-title {
+    font-size: 11px;
+
+    color: #718194;
+}
+
+.stat-number {
+    font-size: 25px;
+
+    color: #213a55;
+
+    margin: 1px 0;
+}
+
+.stat-card small {
+    font-size: 10px;
+
+    color: #94a1ad;
+}
+
+
+/* =========================================================
+   GRID PRINCIPAL
+========================================================= */
+
+.dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+
+.section-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+.section-heading h2,
+.side-card h2 {
+    font-size: 20px;
+
+    color: #233b55;
+
+    margin-top: 5px;
+}
+
+.see-all {
+    color: #315979;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.see-all:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   PROJETOS
+========================================================= */
+
+.project-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.project-card {
+    background: white;
+
+    border:
+        1px solid #e1e7ec;
+
+    padding: 19px;
+
+    display: grid;
+
+    grid-template-columns:
+        45px
+        1fr
+        130px;
+
+    gap: 15px;
+
+    align-items: center;
+
+    transition:
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 18px rgba(28, 53, 76, .08);
+}
+
+.project-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 5px;
+
+    background: #eaf0f5;
+
+    color: #244b6d;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.project-info h3 {
+    color: #29435e;
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.project-info p {
+    color: #7a8997;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    max-width: 480px;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.dashboard-sidebar {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.side-card {
+    background: white;
+
+    border:
+        1px solid #e1e7ec;
+
+    padding: 22px;
+}
+
+.quick-actions {
+    margin-top: 17px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.quick-action {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 5px;
+
+    border-bottom:
+        1px solid #edf0f2;
+
+    transition: background .2s ease;
+}
+
+.quick-action:last-child {
+    border-bottom: none;
+}
+
+.quick-action:hover {
+    background: #f7f9fb;
+}
+
+.quick-icon {
+    width: 35px;
+    height: 35px;
+
+    background: #edf2f6;
+
+    color: #315a7b;
+
+    border-radius: 4px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+
+    font-size: 13px;
+}
+
+.quick-action div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.quick-action strong {
+    font-size: 12px;
+
+    color: #304860;
+}
+
+.quick-action small {
+    font-size: 10px;
+
+    color: #8c99a5;
+}
+
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+.about-card {
+    background:
+        linear-gradient(
+            135deg,
+            #173b61,
+            #244d70
+        );
+
+    color: white;
+}
+
+.about-card .section-label {
+    color: #b7c9da;
+}
+
+.about-card h2 {
+    color: white;
+
+    margin-top: 7px;
+}
+
+.about-card p {
+    color: #d0dce7;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    margin-top: 12px;
+}
+
+.text-button {
+    display: inline-block;
+
+    margin-top: 17px;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.text-button:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.home-callout {
+    margin-top: 15px;
+
+    background: #173b61;
+
+    color: white;
+
+    padding: 28px 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.home-callout span {
+    font-size: 9px;
+
+    letter-spacing: 1.3px;
+
+    color: #b9cbdc;
+
+    font-weight: 700;
+}
+
+.home-callout h2 {
+    font-size: 21px;
+
+    margin-top: 6px;
+}
+
+.home-callout p {
+    font-size: 11px;
+
+    color: #c7d5e1;
+
+    margin-top: 5px;
+}
+
+.btn-white {
+    background: white;
+
+    color: #183d62;
+
+    white-space: nowrap;
+}
