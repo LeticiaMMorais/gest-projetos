@@ -1,11 +1,96 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>
+        Gestão de Projetos
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">   
+    {% block links %}{% endblock %}
 </head>
 <body>
-    
+    {% include 'fragments/header.html' %}
+
+    <main class="main-content">
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <footer class="main-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    GP
+                </div>
+
+                <div>
+                    <strong>Gestão de Projetos</strong>
+                    <p>
+                        Plataforma para acompanhamento,
+                        organização e gestão de projetos.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+                    <h4>Acesso rápido</h4>
+
+                    <a href="{% url 'home' %}">
+                        Início
+                    </a>
+
+                    <a href="{% url 'list-projects' %}">
+                        Projetos
+                    </a>
+                </div>
+
+
+                <div>
+                    <h4>Suporte</h4>
+
+                    <a href="#">
+                        Central de ajuda
+                    </a>
+                    <a href="#">
+                        Contato
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © {% now "Y" %} Gestão de Projetos
+                </span>
+                <span>
+                    Sistema de gerenciamento
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    {% block scripts %}
+    {% endblock scripts %}
+
 </body>
 </html>

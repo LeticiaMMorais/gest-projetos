@@ -1,0 +1,247 @@
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.home-container {
+    width: min(1200px, 92%);
+    min-height: 700px;
+
+    margin: 0 auto;
+
+    padding: 35px 0 20px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    background: white;
+    padding: 40px;
+    gap: 20px;
+
+    border-radius: 4px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    border:
+        1px solid #e1e7ed;
+
+    box-shadow:
+        0 4px 18px rgba(30, 55, 80, .06);
+}
+
+
+.hero-content {
+    padding: 45px 45px 40px;
+}
+
+.hero-label,
+.section-label {
+    font-size: 10px;
+
+    letter-spacing: 1.2px;
+
+    font-weight: 700;
+
+    color: #60758b;
+}
+
+
+.hero h1 {
+    max-width: 570px;
+
+    margin-top: 10px;
+
+    font-size: clamp(28px, 3vw, 40px);
+
+    line-height: 1.12;
+
+    color: #1c3149;
+}
+
+
+.hero p {
+    max-width: 520px;
+
+    margin-top: 15px;
+
+    color: #66788b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    border-radius: 3px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 14px rgba(20, 45, 70, .12);
+}
+
+.btn-primary {
+    background: #153b63;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0f3155;
+}
+
+.btn-secondary {
+    background: white;
+
+    color: #244765;
+
+    border:
+        1px solid #d4dde6;
+}
+
+.btn-secondary:hover {
+    background: #f5f8fa;
+}
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+
+.section-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+.section-heading h2,
+.side-card h2 {
+    font-size: 20px;
+
+    color: #233b55;
+
+    margin-top: 5px;
+}
+
+.see-all {
+    color: #315979;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.see-all:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   PROJETOS
+========================================================= */
+
+.project-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    border-radius: 10px;
+}
+
+.project-info:hover {
+    transform: translateY(-1px);
+
+    box-shadow: 0 6px 18px rgba(28, 53, 76, .08);
+
+    cursor: pointer;
+}
+
+.project-info {
+    background: white;
+
+    display: flex;
+    gap: 30px;
+
+    padding: 19px;
+
+    transition: box-shadow .2s ease, transform .2s ease;
+}
+
+.detail-project {
+    position: relative;
+}
+
+.detail-project::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -20px;
+    width: 5px;
+    border-radius: 10px;
+    height: 100%;
+    background-color: #315979;
+}
+
+.project-info h3 {
+    color: #29435e;
+
+    font-size: 20px;
+    font-weight: 500;
+
+    margin-bottom: 5px;
+}
+
+.project-info p {
+    color: #60758b;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Ver projetos
+{% endblock %}
+
+{% block links %}
+
+    <link rel="stylesheet" href="{% static 'projetos/css/list_projects.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="home-container">
+
+    <section class="hero">
+        {% if projetos %}
+            <div class="header-projects">
+                <h2>Projetos Cadastrados</h2>
+                <a href="{% url 'create-project' %}" class="btn btn-primary">
+                    Criar projeto
+                </a>
+            </div>
+            <div class="project-list">
+                {% for projeto in projetos %}
+                <div class="project-info">
+    
+                    <div class="project-text">
+                        <h3>
+                            <a href="{% url 'project-detail' projeto.id %}" >
+                                {{ projeto.nome }}
+                            </a>
+                        </h3>
+        
+                        <p>
+                            {{ projeto.descricao }}
+                        </p>
+        
+                        <div class="project-meta">
+        
+                            <span>
+                                {{ projeto.data_inicio }}
+                            </span>
+        
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <a href="{% url 'edit-project' projeto.id %}">
+                            <span class="material-symbols-outlined">edit</span>
+                        </a>
+
+                        <a onclick="return confirm('Deseja excluir esse projeto?')" class="delete" href="{% url 'delete-project' projeto.id %}">
+                            <span class="material-symbols-outlined">delete</span>
+                        </a>
+                    </div>
+                    
+                </div>
+                {% endfor %}
+            </div>
+
+        {% else %}
+            <h2 style="text-align: center;">
+                Não há projetos cadastrados
+            </h2>
+        {% endif %}
+    </section>
+</div>
+
+{% endblock %}

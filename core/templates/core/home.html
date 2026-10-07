@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Início
+{% endblock %}
+
+
+{% block links %}
+
+    <link rel="stylesheet" href="{% static 'core/css/home.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="home-container">
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                SISTEMA DE GESTÃO
+            </span>
+            <h1>
+                Gerencie seus projetos
+                com mais organização e eficiência
+            </h1>
+            <p>
+                Centralize informações, acompanhe o andamento
+                das atividades e tenha uma visão completa
+                dos seus projetos em um único lugar.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="{% url 'list-projects' %}" class="btn btn-primary">
+                    Ver projetos
+                    <span>→</span>
+                </a>
+                <a href="{% url 'create-project' %}" class="btn btn-secondary">
+                    Criar projeto
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="dashboard-preview">
+
+                <div class="preview-header">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="preview-content">
+
+                    <div class="preview-line large"></div>
+                    <div class="preview-line"></div>
+
+                    <div class="preview-cards">
+
+                        <div></div>
+                        <div></div>
+                        <div></div>
+
+                    </div>
+
+                    <div class="preview-chart">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="statistics">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                P
+            </div>
+
+            <div>
+                <span class="stat-title">
+                    Projetos
+                </span>
+
+                <strong class="stat-number">
+                    {{ count_projects }}
+                </strong>
+
+                <small>
+                    projetos cadastrados
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                T
+            </div>
+
+            <div>
+                <span class="stat-title">
+                    Tarefas
+                </span>
+
+                <strong class="stat-number">
+                    X
+                </strong>
+
+                <small>
+                    Trefas cadastradas
+                </small>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="dashboard-grid">
+
+        <aside class="dashboard-sidebar">
+
+            <div class="side-card">
+
+                <div class="side-card-header">
+
+                    <div>
+                        <span class="section-label">
+                            ACESSO RÁPIDO
+                        </span>
+
+                        <h2>
+                            Serviços
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <a href="{% url 'create-project' %}" class="quick-action">
+
+                        <span class="quick-icon">
+                            +
+                        </span>
+
+                        <div>
+                            <strong>
+                                Novo projeto
+                            </strong>
+
+                            <small>
+                                Cadastrar projeto
+                            </small>
+                        </div>
+
+                    </a>
+
+
+                    <a href="{% url 'list-projects' %}" class="quick-action">
+
+                        <span class="quick-icon">
+                            P
+                        </span>
+
+                        <div>
+                            <strong>
+                                Lista de projetos
+                            </strong>
+
+                            <small>
+                                Consultar projetos
+                            </small>
+                        </div>
+
+                    </a>
+                </div>
+
+            <div class="side-card about-card">
+
+                <span class="section-label">
+                    SOBRE O SISTEMA
+                </span>
+
+                <h2>
+                    Gestão simplificada
+                </h2>
+
+                <p>
+                    Organize projetos, acompanhe atividades
+                    e facilite o trabalho das equipes por meio
+                    de uma plataforma centralizada.
+                </p>
+
+                <a href="#" class="text-button">
+                    Saiba mais →
+                </a>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+    <section class="home-callout">
+
+        <div>
+
+            <span>
+                PRONTO PARA COMEÇAR?
+            </span>
+
+            <h2>
+                Comece a gerenciar seus projetos.
+            </h2>
+
+            <p>
+                Tenha todas as informações importantes
+                organizadas em um único lugar.
+            </p>
+
+        </div>
+
+        <a href="{% url 'list-projects' %}" class="btn btn-white">
+            Acessar projetos →
+        </a>
+
+    </section>
+</div>
+
+{% endblock %}
