@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Detalhes da Tarefa 
+{% endblock %}
+
+
+{% block links %}
+
+    <link rel="stylesheet" href="{% static 'projetos/css/project_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'tarefas/css/list_tasks.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="home-container">
+
+    <section class="hero">
+        <div class="header-tasks" style="display: flex; gap: 10px; align-items: center;">
+            <a href="{% url 'tarefas:list-tasks' %}" class="button-8" role="button">↩</a>
+            <h2>{{ tarefa.titulo }}</h2>
+        </div>
+        <div class="task-list">
+            <div class="task-info">
+
+                <div class="detail-task">
+                    <h3>Descrição:</h3>
+                    <p>
+                        {{ projeto.descricao }}
+                    </p>
+                </div>
+                
+                <div class="detail-task">
+                    <h3>Prioridade:</h3>
+                    <p>
+                        <span
+                        {% if tarefa.prioridade == 'baixa' %}
+                            class="priority tag-green"
+                        {% elif tarefa.prioridade == 'normal' %}
+                            class="priority tag-yellow"
+                        {% elif tarefa.prioridade == 'alta' %}
+                            class="priority tag-red"
+                        {% else %}
+                            class="priority tag-deep-red"
+                        {% endif %}
+                        >{{ tarefa.prioridade }}</span>
+                    </p>
+                </div>
+                <div class="detail-task">
+                    <h3>Concluído:</h3>
+                    {% if tarefa.concluido %}
+                        <p class="tag tag-green">Sim</p>
+                    {% else %}
+                        <p class="tag tag-red">Não</p>
+                    {% endif %}
+                </div>
+                <div class="detail-task">
+                    <h3>Projeto associado:</h3>
+                    <p class="task-project">
+                        {{ tarefa.projeto.nome }}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

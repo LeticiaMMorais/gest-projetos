@@ -350,8 +350,14 @@ form {
     gap: 5px;
 }
 
-.campos-form input {
+input, 
+select,
+textarea{
     padding: 10px 15px;
     border-radius: 10px;
     border: 1px solid #66788b;
+}
+
+.campos-form.checkbox{
+    flex-direction: row;
 }

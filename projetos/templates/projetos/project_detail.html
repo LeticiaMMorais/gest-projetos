@@ -46,7 +46,7 @@
                     
                         {% for tarefa in projeto.tarefa.all %}
                             {% if not tarefa.concluida %}
-                                <a href="{% comment %}{% url 'task-detail' tarefa.id %}{% endcomment %}" class="task-info">
+                                <a href="{% url 'tarefas:task-detail' tarefa.id %}" class="task-info">
                         
                                     <div class="column">
                                         <h3>
@@ -71,7 +71,7 @@
                                                 >{{ tarefa.prioridade }}</span>
                                             </p>
                                         {% endif %}
-                                        {% if projeto.concluido %}
+                                        {% if tarefa.concluido %}
                                             <p class="tag tag-green">Concluído</p>
                                         {% else %}
                                             <p class="tag tag-red">Não concluído</p>
