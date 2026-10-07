@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Editar projeto
+{% endblock %}
+
+
+{% block links %}
+
+    <link rel="stylesheet" href="{% static 'projetos/css/create_projects.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="home-container">
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="header-projects" style="display: flex; gap: 10px; align-items: center;">
+            <a href="{% url 'list-projects' %}" class="button-8" role="button">↩</a>
+            <h2>Criar Projeto</h2>
+        </div>
+        
+        <div class="campos-form">
+            <label for="{{ form.nome.id_for_label }}">{{ form.nome.label }}</label>
+            <input type="text" name="nome" value="{{ form.nome.value }}" placeholder='Nome do projeto'>
+        </div>
+
+        <div class="campos-form">
+            <label for="{{ form.descricao.id_for_label }}">{{ form.descricao.label }}</label>
+            <input type="text" name="descricao" value="{{ form.descricao.value|default:'' }}" placeholder='Descrição do projeto'>
+        </div>
+
+        <div class="campos-form">
+            <label for="{{ form.data_inicio.id_for_label }}">{{ form.data_inicio.label }}</label>
+            <input type="date" name="data_inicio">
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Salvar
+        </button>
+    </form>
+
+</div>
+
+{% endblock %}

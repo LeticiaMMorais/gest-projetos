@@ -4,7 +4,7 @@ from .forms import ProjectsForm
 
 # Create your views here.
 def listar_projetos(request):
-    projetos = Projeto.objects.all().order_by('data_inicio')
+    projetos = Projeto.objects.all().order_by('-data_inicio')
 
     return render(request, 'projetos/list_projects.html', {'projetos': projetos})
 
@@ -24,3 +24,23 @@ def criar_projeto(request):
         form = ProjectsForm()
 
     return render(request, 'projetos/create_projects.html', {'form': form})
+
+def editar_projeto(request, id):
+    projeto = get_object_or_404(Projeto, id=id)
+
+    if request.method == 'POST':
+        form = ProjectsForm(request.POST, instance=projeto)
+        if form.is_valid():
+            form.save()
+            return redirect('list-projects')
+    else:
+        form = ProjectsForm(instance=projeto)
+
+    return render(request, 'projetos/edit_project.html', {'form': form})
+
+def excluir_projeto(request, id):
+    projetos = Projeto.objects.all().order_by('-data_inicio')
+    projeto = get_object_or_404(Projeto, id=id)
+    projeto.delete()
+
+    return render(request, 'projetos/list_projects.html', {'projetos': projetos})

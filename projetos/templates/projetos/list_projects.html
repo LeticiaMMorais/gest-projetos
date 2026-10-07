@@ -6,7 +6,6 @@
     Ver projetos
 {% endblock %}
 
-
 {% block links %}
 
     <link rel="stylesheet" href="{% static 'projetos/css/list_projects.css' %}">
@@ -27,25 +26,39 @@
             </div>
             <div class="project-list">
                 {% for projeto in projetos %}
-                <a href="{% url 'project-detail' projeto.id %}" class="project-info">
+                <div class="project-info">
     
-                    <h3>
-                        {{ projeto.nome }}
-                    </h3>
-    
-                    <p>
-                        {{ projeto.descricao }}
-                    </p>
-    
-                    <div class="project-meta">
-    
-                        <span>
-                            {{ projeto.data_inicio }}
-                        </span>
-    
+                    <div class="project-text">
+                        <h3>
+                            <a href="{% url 'project-detail' projeto.id %}" >
+                                {{ projeto.nome }}
+                            </a>
+                        </h3>
+        
+                        <p>
+                            {{ projeto.descricao }}
+                        </p>
+        
+                        <div class="project-meta">
+        
+                            <span>
+                                {{ projeto.data_inicio }}
+                            </span>
+        
+                        </div>
                     </div>
-    
-                </a>
+                    
+                    <div>
+                        <a href="{% url 'edit-project' projeto.id %}">
+                            <span class="material-symbols-outlined">edit</span>
+                        </a>
+
+                        <a onclick="return confirm('Deseja excluir esse projeto?')" class="delete" href="{% url 'delete-project' projeto.id %}">
+                            <span class="material-symbols-outlined">delete</span>
+                        </a>
+                    </div>
+                    
+                </div>
                 {% endfor %}
             </div>
 

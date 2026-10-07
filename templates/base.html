@@ -11,6 +11,7 @@
         {% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">   
     {% block links %}{% endblock %}
 </head>
 <body>
@@ -53,12 +54,8 @@
                         Início
                     </a>
 
-                    <a href="#">
+                    <a href="{% url 'list-projects' %}">
                         Projetos
-                    </a>
-
-                    <a href="#">
-                        Relatórios
                     </a>
                 </div>
 
@@ -91,6 +88,9 @@
         </div>
 
     </footer>
+
+    {% block scripts %}
+    {% endblock scripts %}
 
 </body>
 </html>

@@ -142,36 +142,6 @@
 
     <section class="dashboard-grid">
 
-        <div class="dashboard-main">
-
-            {% if projects %}
-                <div class="project-list">
-
-                    {% for project in projects %}
-                    <article class="project-card">
-
-                        <div class="project-icon">
-                            P
-                        </div>
-
-                        <div class="project-info">
-
-                            <h3>
-                                {{ project.nome }}
-                            </h3>
-
-                        </div>
-
-                    </article>
-                    {% endfor %}
-                    
-                </div>
-            {% else %}
-                <h2>
-                    Não há projetos cadastrados
-                </h2>
-            {% endif %}
-
         <aside class="dashboard-sidebar">
 
             <div class="side-card">
@@ -229,6 +199,7 @@
                         </div>
 
                     </a>
+                </div>
 
             <div class="side-card about-card">
 
