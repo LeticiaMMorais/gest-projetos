@@ -5,6 +5,7 @@
 .hero .header-tasks {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 .tasks-list {
@@ -27,21 +28,21 @@
 
 .task-info {
     background: white;
-    display: flex;
-    flex-direction: column;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     border:1px solid #e1e7ec;
-
     padding: 19px;
-
     transition: box-shadow .2s ease, transform .2s ease;
+}
+
+.task-info .column {
+    flex-direction: column;
+    margin-right: 2rem;
 }
 
 .task-info h3 {
     color: #29435e;
-
     font-size: 14px;
-
     margin-bottom: 5px;
 }
 
@@ -55,15 +56,84 @@
     max-width: 480px;
 }
 
+.task-project{
+    width: fit-content;
+    border-radius: 10px;
+    padding: 0.5rem 1.5rem;
+    margin-top: 3px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
 .task-meta {
     display: flex;
-
     gap: 15px;
-
     margin-top: 8px;
-
     color: #9aa6b1;
-
     font-size: 10px;
 }
+
+.priority {
+      /* background-color: #e1ecf4; */
+  border-radius: 3px;
+  border: 1px solid hsl(37, 0%, 63%);
+  box-sizing: border-box;
+  /* color: #39739d; */
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 2px 4px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  margin-bottom: 3px;
+}
+
+
+.tag {
+  border-radius: 100px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+}
+
+.tag-green {
+  background-color: #c2fbd7;
+  color: green;
+}
+
+.tag-yellow {
+  background-color: rgb(251, 246, 194);
+  color: hsl(50, 100%, 25%);
+}
+
+.tag-red {
+  background-color: hsl(0, 88%, 87%);
+  color: red;
+}
+
+.tag-deep-red {
+  background-color: hsl(0, 80%, 75%);
+  color: hsl(0, 100%, 10%);
+}
+
 
