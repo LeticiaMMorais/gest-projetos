@@ -18,43 +18,69 @@
         {% if tarefas %}
             <div class="header-tasks">
                 <h2>Tarefas</h2>
-                <a href="<{% comment %}{% url 'create-task' %}{% endcomment %}" class="btn btn-primary">
+                <a href="{% url 'tarefas:create-task' %}" class="btn btn-primary">
                     Criar tarefa
                 </a>
             </div>
             <div class="tasks-list">
                 {% for tarefa in tarefas %}
-                <a href="{% comment %}{% url 'task-detail' projeto.id %}{% endcomment %}" class="task-info">
-    
-                    <h3>
-                        {{ tarefa.titulo }}
-                    </h3>
-                    
-                    {% if tarefa.prioridade %}
-                        <p>
-                            Prioridade: {{ tarefa.prioridade }}
-                        </p>
-                    {% endif %}
-
-                    {% if projeto.concluido %}
-                        <p class="tag tag-green">Concluído</p>
-                    {% else %}
-                        <p class="tag tag-red">Não concluído</p>
-                    {% endif %}
+                <div class="task-info">
+                    <a href="{% url 'tarefas:task-detail' tarefa.id %}" class="column">
+                        <h3>
+                            {{ tarefa.titulo }}
+                        </h3>
+                        
+                        {% if tarefa.prioridade %}
+                            <p>
+                                Prioridade: 
+                                
+                                <span
+                                
+                                {% if tarefa.prioridade == 'baixa' %}
+                                    class="priority tag-green"
+                                {% elif tarefa.prioridade == 'normal' %}
+                                    class="priority tag-yellow"
+                                {% elif tarefa.prioridade == 'alta' %}
+                                    class="priority tag-red"
+                                {% else %}
+                                    class="priority tag-deep-red"
+                                {% endif %}
+                                >{{ tarefa.prioridade }}</span>
+                            </p>
+                        {% endif %}
+                        {% if tarefa.concluido %}
+                            <p class="tag tag-green">Concluído</p>
+                        {% else %}
+                            <p class="tag tag-red">Não concluído</p>
+                        {% endif %}
+                    </a>
     
                     {% if tarefa.projeto %}
-                        <p>
-                            Projeto associado: {{ tarefa.projeto.nome }}
-                        </p>
+                    <div class="column">
+                        <p>Projeto associado:</p>
+                        <div class="task-project">
+                            {{ tarefa.projeto.nome }}
+                        </div>
+                    </div>
                     {% endif %}
     
+                <div class="">
+                <a href="{% url 'tarefas:edit-task' tarefa.id %}">
+                    <span class="material-symbols-outlined">edit</span>
                 </a>
-                {% endfor %}
-            </div>
 
+                <a onclick="return confirm('Deseja excluir essa tarefa?')" class="delete" href="{% url 'tarefas:delete-task' tarefa.id %}">
+                    <span class="material-symbols-outlined">delete</span>
+                </a>
+            </div>
+        </div>
+            
+        {% endfor %}
+        </div>
+        
         {% else %}
             <h2 style="text-align: center;">
-                Não há tarefas cadastrados
+                Não há tarefas cadastradas
             </h2>
         {% endif %}
     </section>

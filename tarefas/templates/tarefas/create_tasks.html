@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Criar tarefa
+{% endblock %}
+
+
+{% block links %}
+
+    <link rel="stylesheet" href="{% static 'projetos/css/create_projects.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="home-container">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="campos-form">
+            <label for="{{ form.titulo.id_for_label }}">{{ form.titulo.label }}</label>
+            <input type="text" name="titulo" placeholder="Título da tarefa" value="{{ form.titulo.value|default_if_none:'' }}">
+        </div>
+        <div class="campos-form">
+            <label for="{{ form.descricao.id_for_label }}">{{ form.descricao.label }}</label>
+            <textarea type="text" name="descricao" placeholder="Descreva o que deve ser feito na sua tarefa">{{ form.descricao.value|default:'' }}</textarea>
+        </div>
+        <div class="campos-form">
+            <label for="{{ form.prioridade.id_for_label }}">{{ form.prioridade.label }}</label>
+            <select name="{{ form.prioridade.html_name }}" id="{{ form.prioridade.id_for_label }}" class="form-select">
+                {% for value, label in form.fields.prioridade.choices %}
+                    <option value="{{ value }}" {% if form.prioridade.value == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="campos-form checkbox">
+            <label for="{{ form.concluido.id_for_label }}">{{ form.concluido.label }}</label>
+            <input type="checkbox"
+                name="{{ form.concluido.html_name }}"
+                id="{{ form.concluido.id_for_label }}"
+                class="form-check-input"
+                {% if form.concluido.value %}checked{% endif %}>
+        </div>
+
+        <div class="campos-form">
+            <label for="{{ form.projeto.id_for_label }}">{{ form.projeto.label }}</label>
+            <select name="{{ form.projeto.html_name }}" id="{{ form.projeto.id_for_label }}" class="form-select">
+                {% for value, label in form.fields.projeto.choices %}
+                    <option value="{{ value }}" {% if form.projeto.value == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Salvar
+        </button>
+        
+    </form>
+</div>
+
+{% endblock %}

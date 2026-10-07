@@ -10,6 +10,7 @@
 {% block links %}
 
     <link rel="stylesheet" href="{% static 'projetos/css/project_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'tarefas/css/list_tasks.css' %}">
 
 {% endblock %}
 
@@ -38,8 +39,58 @@
                         {{ projeto.data_inicio }}
                     </p>
                 </div>
-
             </div>
+
+            <div class="detail-project">
+                    <h3>Tarefas a concluir</h3>
+                    
+                        {% for tarefa in projeto.tarefa.all %}
+                            {% if not tarefa.concluida %}
+                                <a href="{% url 'tarefas:task-detail' tarefa.id %}" class="task-info">
+                        
+                                    <div class="column">
+                                        <h3>
+                                            {{ tarefa.titulo }}
+                                        </h3>
+                                        
+                                        {% if tarefa.prioridade %}
+                                            <p>
+                                                Prioridade: 
+                                                
+                                                <span
+                                                
+                                                {% if tarefa.prioridade == 'baixa' %}
+                                                    class="priority tag-green"
+                                                {% elif tarefa.prioridade == 'normal' %}
+                                                    class="priority tag-yellow"
+                                                {% elif tarefa.prioridade == 'alta' %}
+                                                    class="priority tag-red"
+                                                {% else %}
+                                                    class="priority tag-deep-red"
+                                                {% endif %}
+                                                >{{ tarefa.prioridade }}</span>
+                                            </p>
+                                        {% endif %}
+                                        {% if tarefa.concluido %}
+                                            <p class="tag tag-green">Concluído</p>
+                                        {% else %}
+                                            <p class="tag tag-red">Não concluído</p>
+                                        {% endif %}
+                                    </div>
+                    
+                                    {% if tarefa.projeto %}
+                                    <div class="column">
+                                        <p>Projeto associado:</p>
+                                        <div class="task-project">
+                                            {{ tarefa.projeto.nome }}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    
+                </div>
         </div>
     </section>
 </div>

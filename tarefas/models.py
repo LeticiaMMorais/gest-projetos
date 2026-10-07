@@ -1,5 +1,5 @@
 from django.db import models
-from projetos.models import *
+from projetos.models import Projeto
 
 class Tarefa(models.Model):
     PRIORITY_CHOICES = [
@@ -11,8 +11,8 @@ class Tarefa(models.Model):
 
     titulo = models.CharField(max_length=255, null=False, blank=False)
     descricao = models.TextField(max_length=500, null=True, blank=True)
-    prioridade = models.CharField(choices=PRIORITY_CHOICES)
-    concluido = models.BooleanField(null=False)
+    prioridade = models.CharField(max_length=10,choices=PRIORITY_CHOICES)
+    concluido = models.BooleanField(null=False, default=False)
     projeto = models.ForeignKey(
         Projeto,
         on_delete=models.CASCADE,
