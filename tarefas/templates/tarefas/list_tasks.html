@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Ver projetos
+{% endblock %}
+
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'tarefas/css/list_tasks.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="home-container">
+
+    <section class="hero">
+        {% if tarefas %}
+            <div class="header-tasks">
+                <h2>Tarefas</h2>
+                <a href="<{% comment %}{% url 'create-task' %}{% endcomment %}" class="btn btn-primary">
+                    Criar tarefa
+                </a>
+            </div>
+            <div class="tasks-list">
+                {% for tarefa in tarefas %}
+                <a href="{% comment %}{% url 'task-detail' projeto.id %}{% endcomment %}" class="task-info">
+    
+                    <h3>
+                        {{ tarefa.titulo }}
+                    </h3>
+                    
+                    {% if tarefa.prioridade %}
+                        <p>
+                            Prioridade: {{ tarefa.prioridade }}
+                        </p>
+                    {% endif %}
+
+                    {% if projeto.concluido %}
+                        <p class="tag tag-green">Concluído</p>
+                    {% else %}
+                        <p class="tag tag-red">Não concluído</p>
+                    {% endif %}
+    
+                    {% if tarefa.projeto %}
+                        <p>
+                            Projeto associado: {{ tarefa.projeto.nome }}
+                        </p>
+                    {% endif %}
+    
+                </a>
+                {% endfor %}
+            </div>
+
+        {% else %}
+            <h2 style="text-align: center;">
+                Não há tarefas cadastrados
+            </h2>
+        {% endif %}
+    </section>
+</div>
+
+{% endblock %}
