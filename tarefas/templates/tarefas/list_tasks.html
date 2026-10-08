@@ -25,9 +25,14 @@
             <div class="tasks-list">
                 {% for tarefa in tarefas %}
                 <div class="task-info">
-                    <a href="{% url 'tarefas:task-detail' tarefa.id %}" class="column">
+                    <a href="{% url 'tarefas:task-detail' tarefa.id %}" class="column info-task-division">
                         <h3>
                             {{ tarefa.titulo }}
+                            {% if tarefa.concluido %}
+                            <small class="tag tag-green">Concluído</small>
+                            {% else %}
+                                <small class="tag tag-red">Não concluído</small>
+                            {% endif %}
                         </h3>
                         
                         {% if tarefa.prioridade %}
@@ -47,11 +52,6 @@
                                 {% endif %}
                                 >{{ tarefa.prioridade }}</span>
                             </p>
-                        {% endif %}
-                        {% if tarefa.concluido %}
-                            <p class="tag tag-green">Concluído</p>
-                        {% else %}
-                            <p class="tag tag-red">Não concluído</p>
                         {% endif %}
                     </a>
     
