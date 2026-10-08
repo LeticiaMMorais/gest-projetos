@@ -36,7 +36,7 @@
 
         <div class="campos-form">
             <label for="{{ form.data_inicio.id_for_label }}">{{ form.data_inicio.label }}</label>
-            <input type="date" name="data_inicio">
+            <input type="date" name="data_inicio" value="{{ form.data_inicio.value|default:'' }}">
         </div>
 
         <button type="submit" class="btn btn-primary">
