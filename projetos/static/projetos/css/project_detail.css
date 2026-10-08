@@ -216,9 +216,10 @@
 
 .detail-project {
     position: relative;
+    margin-bottom: 1rem;
 }
 
-.detail-project::before {
+.h3-style::before {
     content: '';
     display: block;
     position: absolute;
@@ -228,10 +229,11 @@
     height: 100%;
     background-color: #315979;
 }
+   
 
 .project-info h3 {
     color: #29435e;
-
+    position: relative;
     font-size: 20px;
     font-weight: 500;
 

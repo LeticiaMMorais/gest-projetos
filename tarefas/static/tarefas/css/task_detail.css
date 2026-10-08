@@ -4,11 +4,17 @@
 .hero{
     display: flex;
     flex-direction: column;
+    background-color: white;
+    padding: 2rem;
 }
+
+.header-tasks {
+    margin-bottom: 1rem;
+}
+
 
 .task-list {
     display: flex;
-
     flex-direction: column;
 
     gap: 10px;
@@ -28,6 +34,7 @@
     background: white;
 
     display: flex;
+    flex-direction: column;
     gap: 30px;
 
     padding: 19px;
