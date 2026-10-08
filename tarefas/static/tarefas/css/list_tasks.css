@@ -40,6 +40,12 @@
     box-shadow: 0 6px 18px rgba(28, 53, 76, .08);
 }
 
+.info-task-division {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
 .detail-task {
     position: relative;
     padding-left: 18px;       /* espaço para a barra lateral */
@@ -90,6 +96,7 @@
     text-align: center;
     user-select: none;
     white-space: nowrap;
+    color: #29435e;
 }
 
 .tag {
@@ -101,9 +108,19 @@
     border: 0;
     font-size: 16px;
     user-select: none;
+    color: black;
 }
 
-.tag-green    { background-color: #c2fbd7; color: green; }
-.tag-yellow   { background-color: rgb(251, 246, 194); color: hsl(50, 100%, 25%); }
-.tag-red      { background-color: hsl(0, 88%, 87%); color: red; }
-.tag-deep-red { background-color: hsl(0, 80%, 75%); color: hsl(0, 100%, 10%); }
+.tag-green { 
+    background-color: #c2fbd7;
+}
+
+.tag-yellow { 
+    background-color: rgb(251, 246, 194);
+}
+.tag-red { 
+    background-color: hsl(0, 88%, 87%);
+}
+.tag-deep-red { 
+    background-color: hsl(0, 80%, 75%); 
+}
