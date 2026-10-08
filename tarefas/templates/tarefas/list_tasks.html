@@ -82,6 +82,9 @@
             <h2 style="text-align: center;">
                 Não há tarefas cadastradas
             </h2>
+            <a href="{% url 'tarefas:create-task' %}" class="btn btn-primary">
+                    Criar tarefa
+                </a>
         {% endif %}
     </section>
 </div>
