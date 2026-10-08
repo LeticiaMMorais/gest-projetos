@@ -9,8 +9,7 @@
 
 {% block links %}
 
-    <link rel="stylesheet" href="{% static 'projetos/css/project_detail.css' %}">
-    <link rel="stylesheet" href="{% static 'tarefas/css/list_tasks.css' %}">
+    <link rel="stylesheet" href="{% static 'tarefas/css/task_detail.css' %}">
 
 {% endblock %}
 
@@ -19,7 +18,7 @@
 <div class="home-container">
 
     <section class="hero">
-        <div class="header-tasks" style="display: flex; gap: 10px; align-items: center;">
+        <div class="header-tasks" style="display: flex; flex-direction: row; gap: 10px; align-items: center;">
             <a href="{% url 'tarefas:list-tasks' %}" class="button-8" role="button">↩</a>
             <h2>{{ tarefa.titulo }}</h2>
         </div>
@@ -29,7 +28,7 @@
                 <div class="detail-task">
                     <h3>Descrição:</h3>
                     <p>
-                        {{ projeto.descricao }}
+                        {{ tarefa.descricao }}
                     </p>
                 </div>
                 
@@ -65,6 +64,7 @@
                 </div>
 
             </div>
+
         </div>
     </section>
 </div>

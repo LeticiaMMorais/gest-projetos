@@ -24,28 +24,27 @@
             <h2>{{ projeto.nome }}</h2>
         </div>
         <div class="project-list">
-            <div class="project-info">
-
-                <div class="detail-project">
-                    <h3>Descrição:</h3>
-                    <p>
-                        {{ projeto.descricao }}
-                    </p>
+            <div class="project-info detail-project">
+                <div>
+                    <div class="detail-project">
+                        <h3 class="h3-style">Descrição:</h3>
+                        <p>
+                            {{ projeto.descricao }}
+                        </p>
+                    </div>
+                    
+                    <div class="detail-project">
+                        <h3 class="h3-style">Data de início:</h3>
+                        <p>
+                            {{ projeto.data_inicio }}
+                        </p>
+                    </div>
                 </div>
-                
-                <div class="detail-project">
-                    <h3>Data de início:</h3>
-                    <p>
-                        {{ projeto.data_inicio }}
-                    </p>
-                </div>
-            </div>
-
-            <div class="detail-project">
-                    <h3>Tarefas a concluir</h3>
+                <div>
+                    <h3 class="h3-style">Tarefas a concluir</h3>
                     
                         {% for tarefa in projeto.tarefa.all %}
-                            {% if not tarefa.concluida %}
+                            {% if not tarefa.concluido %}
                                 <a href="{% url 'tarefas:task-detail' tarefa.id %}" class="task-info">
                         
                                     <div class="column">
@@ -89,8 +88,8 @@
                                 </a>
                             {% endif %}
                         {% endfor %}
-                    
                 </div>
+            </div>
         </div>
     </section>
 </div>
